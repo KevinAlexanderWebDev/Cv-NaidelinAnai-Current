@@ -1,0 +1,55 @@
+<div class="layout">
+  <nav class="navbar">
+    <div class="nav-content">
+      <h1>Naidelin Anai | CV</h1>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/about">Sobre mí</a></li>
+        <li><a routerLink="/courses">Certificados</a></li>
+        <li><a routerLink="/experience">Experiencia</a></li>
+        <li><a routerLink="/skills">Habilidades</a></li>
+        <li><a routerLink="/contact">Contacto</a></li>
+        <li>
+          <button class="theme-toggle pulse-button" (click)="toggleTheme()" title="modo claro - oscuro">
+            <img [src]="themeIcon" alt="Tema" />
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+
+  <img src="assets/icons/whatsapp.png" alt="Contáctame" id="open-form-btn" class="pulse-button"/>
+
+  <footer class="footer">
+    <p>Hecho por Kevin Alexander Meza Morales || Desarrollador Web💻</p>
+  </footer>
+</div>
+
+<nav class="mobile-nav">
+  <a routerLink="/"><img src="assets/icons/casa.png" alt="Inicio" /></a>
+  <a routerLink="/about"><img src="assets/icons/mujer.png" alt="Sobre mí" /></a>
+  <a routerLink="/courses"><img src="assets/icons/certificado.png" alt="Sobre mí" /></a>
+  <a routerLink="/experience"><img src="assets/icons/experiencia.png" alt="Experiencia" /></a>
+  <a routerLink="/skills"><img src="assets/icons/habilidades.png" alt="Habilidades" /></a>
+  <a routerLink="/contact"><img src="assets/icons/contacto.png" alt="Contacto" /></a>
+  <button class="theme-toggle pulse-button" (click)="toggleTheme()">
+    <img [src]="themeIcon" alt="Tema" />
+  </button>
+</nav>
+
+<div id="form-overlay">
+  <div id="form-container">
+    <span id="close-form">&times;</span>
+    <h2>Contáctame por WhatsApp</h2>
+    <form id="whatsapp-form">
+      <input type="text" id="name" placeholder="Tu nombre" required />
+      <textarea id="message" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit" class="btn">Enviar a WhatsApp</button>
+    </form>
+  </div>
+</div>

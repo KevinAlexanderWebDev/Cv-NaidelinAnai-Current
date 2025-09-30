@@ -1,0 +1,128 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/effects" as mixins;
+
+:host {
+  display: block;
+  height: 100%;
+  background-color: $background-color;
+  color: $text-color;
+  border-left: 4px solid $accent-color;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+  overflow: hidden;
+
+  .about {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    animation: fadeSlideUp 0.8s ease-out;
+
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: $primary-color;
+      text-align: center;
+    }
+
+    .intro {
+      font-weight: 600;
+      color: $accent-color;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: darken($text-color, 10%);
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .quote {
+      font-style: italic;
+      font-weight: 500;
+      color: $accent-color;
+      border-left: 3px solid $accent-color;
+      padding-left: 1rem;
+      background-color: lighten($background-color, 5%);
+      border-radius: 6px;
+      margin-top: 1rem;
+      font-size: 1rem;
+      text-align: left;
+    }
+  }
+}
+
+:host-context(body.dark-mode) {
+  @include mixins.mirror-glow;
+  background-color: $dark-background-color;
+  color: $dark-text-color;
+  border: none;
+
+  .about {
+    h2 {
+      color: $dark-primary-color;
+    }
+
+    .intro {
+      color: $dark-accent-color;
+    }
+
+    p {
+      color: lighten($dark-text-color, 10%);
+    }
+
+    .quote {
+      color: $dark-primary-color;
+      border-left-color: $dark-accent-color;
+      background-color: darken($dark-background-color, 5%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    .about {
+      padding: 2rem 1.5rem;
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .intro {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        text-align: left;
+      }
+
+      .quote {
+        font-size: 0.95rem;
+        padding-left: 0.8rem;
+      }
+    }
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

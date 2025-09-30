@@ -1,0 +1,24 @@
+<section class="certificates animate-in">
+  <h2>📄Certificados</h2>
+  <div #gridRef [ngClass]="{ 'grid-layout': !isTinyScreen, 'swipe-mode': isTinyScreen }">
+    <div class="card" *ngFor="let cert of certificates" (click)="openCert(cert)">
+      <img [src]="cert.image" [alt]="cert.title" />
+      <div class="info">
+        <h3>{{ cert.title }}</h3>
+        <p>{{ cert.issuer }}</p>
+        <span>{{ cert.date }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cert-overlay" *ngIf="selectedCert" (click)="closeCert()">
+  <div class="cert-popup" (click)="$event.stopPropagation()">
+    <img [src]="selectedCert.image" [alt]="selectedCert.title" />
+    <h3>{{ selectedCert.title }}</h3>
+    <p>{{ selectedCert.issuer }}</p>
+    <span>{{ selectedCert.date }}</span>
+    <button class="close-btn" (click)="closeCert()" aria-label="Ir al siguiente slide"
+    role="button">×</button>
+  </div>
+</div>

@@ -1,0 +1,224 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/effects" as mixins;
+
+:host {
+  background-color: $background-color;
+  color: $text-color;
+  border-left: 4px solid $accent-color;
+  padding: 4rem;
+  display: block;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+
+    .profile-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+      border: 4px solid $accent-color;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .info {
+      flex: 1;
+
+      h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.4rem;
+        margin: 0;
+        color: $primary-color;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        color: $accent-color;
+      }
+
+      .description {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        margin-top: 1rem;
+        line-height: 1.6;
+      }
+
+      .badges {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+
+        .badge {
+          background-color: $accent-color;
+          color: #fff;
+          padding: 0.4rem 0.8rem;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+  }
+}
+
+:host-context(body.dark-mode) {
+  @include mixins.mirror-glow;
+  background: $dark-background-color;
+  color: $dark-text-color;
+  border: none;
+
+  .profile-img {
+    border-color: $dark-accent-color;
+    box-shadow: 0 0 16px rgba(255, 0, 255, 0.3), 0 0 32px rgba(0, 255, 255, 0.2);
+    filter: drop-shadow(0 0 2px $accent-color);
+  }
+
+  h1 {
+    color: $dark-primary-color;
+  }
+
+  .subtitle {
+    color: $dark-accent-color;
+  }
+
+  .description {
+    color: lighten($dark-text-color, 10%);
+  }
+
+  .badge {
+    background-color: $dark-accent-color;
+    color: #fff;
+    filter: drop-shadow(0 0 2px $accent-color);
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    padding: 2rem;
+
+    .profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .profile-img {
+        width: 180px;
+        height: 180px;
+      }
+
+      .info {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .description {
+          font-size: 0.95rem;
+        }
+
+        .badges {
+          justify-content: center;
+
+          .badge {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile {
+  animation: fadeSlideUp 0.8s ease-out;
+}
+
+.availability {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $accent-color;
+  background-color: rgba($accent-color, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba($accent-color, 0.2);
+}
+
+.quote {
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 1rem;
+  color: $primary-color;
+  border-left: 4px solid $accent-color;
+  padding-left: 1rem;
+  animation: fadeSlideUp 0.8s ease-out;
+}
+
+:host-context(body.dark-mode) {
+  .quote {
+    color: $dark-primary-color;
+    border-left-color: $dark-accent-color;
+  }
+}
+
+.soft-skills {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  .skill {
+    background-color: rgba($accent-color, 0.1);
+    color: $accent-color;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid $accent-color;
+    transition: background 0.3s ease;
+  }
+}
+
+:host-context(body.dark-mode) {
+  .soft-skills .skill {
+    background-color: rgba($dark-accent-color, 0.1);
+    color: $dark-accent-color;
+    border-color: $dark-accent-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote,
+  .soft-skills {
+    display: none !important;
+  }
+}

@@ -1,0 +1,31 @@
+<main class="carousel">
+  <section class="slide" #slideRef><app-header></app-header></section>
+  <section class="slide" #slideRef><app-about></app-about></section>
+  <section class="slide" #slideRef><app-courses></app-courses></section>
+  <section class="slide" #slideRef><app-experience></app-experience></section>
+  <section class="slide" #slideRef><app-skills></app-skills></section>
+  <section class="slide" #slideRef><app-contact></app-contact></section>
+
+  <button
+    class="nav prev"
+    (click)="prev()"
+    aria-label="Ir al siguiente slide"
+    role="button"
+  >
+    <img src="assets/icons/flecha-izquierda.png" alt="Anterior" />
+  </button>
+
+  <button
+    class="nav next"
+    (click)="next()"
+    aria-label="Ir al siguiente slide"
+    role="button"
+  >
+    <img src="assets/icons/flecha-derecha.png" alt="Siguiente" />
+  </button>
+
+  <div class="touch-hint">
+    <img src="assets/icons/tocar.png" alt="Toca para navegar" />
+    <span>Toca los íconos de abajo para navegar</span>
+  </div>
+</main>

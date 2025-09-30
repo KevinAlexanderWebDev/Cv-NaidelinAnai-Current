@@ -1,0 +1,18 @@
+<section class="skills" @zoomInStagger>
+  <h2>🛠️ Habilidades</h2>
+  <p class="swipe-hint">📌 Toca o desliza entre el mazo de cartas para ver más habilidades</p>
+
+  <div class="grid">
+    <div
+      *ngFor="let skill of skills; let i = index"
+      class="skill-card skill-item"
+      [class.active]="i === activeIndex"
+      (click)="nextSkill()"
+      (touchstart)="nextSkill()"
+    >
+      <span class="icon">{{ skill.icon }}</span>
+      <h3>{{ skill.title }}</h3>
+      <p>{{ skill.description }}</p>
+    </div>
+  </div>
+</section>
