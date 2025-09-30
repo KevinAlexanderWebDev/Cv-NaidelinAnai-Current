@@ -53,9 +53,7 @@ src/assets/documents/
 *.txt
 *.csv
 *.json
-*.pdf
-*.jpg
-*.png
+
 
 ../../cv-isis/
 ../../for-my-girl/
