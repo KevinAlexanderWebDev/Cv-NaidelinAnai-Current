@@ -40,7 +40,7 @@ Este proyecto es un CV interactivo desarrollado para **Naidelin Anai Torres Meza
 
 ## 🌐 Vista previa del proyecto
 
-🔗 [cv-naidelin.vercel.app](http://localhost:4200/)
+🔗 [https://cv-naidelin-current.vercel.app/](http://localhost:4200/)
 
 ---
 
@@ -61,6 +61,6 @@ Desarrollador Web & Lógico | Arte + Tecnología
 1. **Clona el repositorio:**
 
 ```bash
-git clone https://github.com/kevinmezamorales/cv-naidelin.git
+git clone https://github.com/KevinAlexanderWebDev/Cv-NaidelinAnai-Current
 cd cv-naidelin
 
