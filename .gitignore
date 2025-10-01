@@ -41,14 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Angular build
-dist/
-node_modules/
-
-# Assets (ahora estarán en Cloudinary)
-src/assets/images/
-src/assets/documents/
-
 # Archivos externos y personales
 *.txt
 *.csv
