@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./layout.scss'],
 })
 export class Layout implements OnInit, AfterViewInit {
-  themeIcon = 'assets/icons/sol.png';
+  themeIcon = '/assets/icons/sol.png';
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
@@ -24,7 +24,7 @@ export class Layout implements OnInit, AfterViewInit {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.classList.add(savedTheme + '-mode');
     this.themeIcon =
-      savedTheme === 'dark' ? 'assets/icons/luna.png' : 'assets/icons/sol.png';
+      savedTheme === 'dark' ? '/assets/icons/luna.png' : '/assets/icons/sol.png';
   }
 
   toggleTheme(): void {
@@ -37,7 +37,7 @@ export class Layout implements OnInit, AfterViewInit {
     const nextTheme = isDark ? 'light' : 'dark';
     localStorage.setItem('theme', nextTheme);
     this.themeIcon =
-      nextTheme === 'dark' ? 'assets/icons/luna.png' : 'assets/icons/sol.png';
+      nextTheme === 'dark' ? '/assets/icons/luna.png' : '/assets/icons/sol.png';
   }
 
   ngAfterViewInit(): void {

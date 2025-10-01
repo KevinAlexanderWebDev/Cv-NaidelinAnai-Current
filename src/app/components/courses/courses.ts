@@ -56,19 +56,19 @@ export class Courses implements AfterViewInit {
       title: 'Constancia de Capacitación | Prevención de riesgos laborales',
       issuer: 'Safety Colors',
       date: 'Octubre 2024',
-      image: 'assets/documents/Certificado_prev_riesgoslab.png',
+      image: '/assets/documents/Certificado_prev_riesgoslab.png',
     },
     {
       title: 'Constancia de Capacitación | Basico de seguridad',
       issuer: 'Safety Colors',
       date: 'Noviembre 2024',
-      image: 'assets/documents/Certificado_basico_seguridad.png',
+      image: '/assets/documents/Certificado_basico_seguridad.png',
     },
     {
       title: 'Carta Pasante',
       issuer: 'Terminación de estudios | Istna',
       date: 'Agosto 2025',
-      image: 'assets/documents/Constancia_terminacion.png',
+      image: '/assets/documents/Constancia_terminacion.png',
     },
   ];
 }
