@@ -40,7 +40,9 @@ Este proyecto es un CV interactivo desarrollado para **Naidelin Anai Torres Meza
 
 ## 🌐 Vista previa del proyecto
 
-🔗 [https://cv-naidelin-current.vercel.app/](http://localhost:4200/)
+🔗 [https://cv-naidelin-current.vercel.app/]
+
+🔗 (http://localhost:4200/)
 
 ---
 
